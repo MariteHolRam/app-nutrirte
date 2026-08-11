@@ -1,0 +1,1183 @@
+/* CSS para Folleto Nutricional Renal - Optimizado para Pantalla e Impresión (Carta) */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  --primary: #1e6b7b;      /* Azul Cerceta Principal */
+  --primary-light: #e0f2f1;/* Fondo claro cerceta */
+  --accent: #ff8f00;       /* Amarillo Naranja de acento */
+  --text-dark: #37474f;    /* Texto principal oscuro */
+  --text-light: #78909c;   /* Texto secundario claro */
+  --border-color: #cfd8dc; /* Color de bordes */
+  
+  /* Colores del Semáforo de Potasio */
+  --low-potassium: #2e7d32;   /* Verde oscuro */
+  --low-bg: #e8f5e9;
+  
+  --mod-potassium: #ef6c00;   /* Naranja oscuro */
+  --mod-bg: #fff3e0;
+  
+  --high-potassium: #c62828;  /* Rojo oscuro */
+  --high-bg: #ffebee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-dark);
+  background-color: #eceff1;
+  line-height: 1.5;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Contenedor de Páginas */
+.pages-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 10px;
+}
+
+/* Estilo Base de Página Carta */
+.page {
+  background: #ffffff;
+  width: 8.5in;
+  height: 11.0in;
+  padding: 0.6in 0.6in 0.5in 0.6in;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Encabezado de Página (excepto portada) */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.page-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.page-header .brand {
+  font-size: 11px;
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Pie de Página */
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 8px;
+  margin-top: 15px;
+  font-size: 10px;
+  color: var(--text-light);
+}
+
+.page-footer .page-number {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ================= PORTADA (PÁGINA 1) ================= */
+.cover-layout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cover-header {
+  background: linear-gradient(135deg, var(--primary) 0%, #114c57 100%);
+  color: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.cover-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+  width: 20px;
+  height: 20px;
+  background: #114c57;
+}
+
+.cover-header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.cover-header p {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.9;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cover-body {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.intro-card {
+  background: var(--primary-light);
+  border-left: 5px solid var(--primary);
+  padding: 20px;
+  border-radius: 4px 8px 8px 4px;
+}
+
+.intro-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary);
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.intro-card p {
+  font-size: 12.5px;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.equivalente-explanation {
+  background: #fafafa;
+  border: 1px dashed var(--border-color);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.equivalente-explanation h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--accent);
+  font-size: 15px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.equivalente-explanation p {
+  font-size: 12px;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.example-box {
+  background: white;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.example-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--primary);
+}
+
+.example-item img, .example-item svg {
+  margin-bottom: 5px;
+}
+
+.cover-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+}
+
+/* ================= DISEÑO DEL CATÁLOGO ================= */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.catalog-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.food-group-title {
+  background-color: var(--primary);
+  color: white;
+  padding: 6px 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.food-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.food-table th {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+  text-align: left;
+  padding: 6px 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.food-table td {
+  padding: 5.5px 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.food-table tr:hover td {
+  background-color: #fafafa;
+}
+
+/* Semáforos en Tablas */
+.sem-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.sem-badge.low {
+  background-color: var(--low-bg);
+  color: var(--low-potassium);
+}
+
+.sem-badge.mod {
+  background-color: var(--mod-bg);
+  color: var(--mod-potassium);
+}
+
+.sem-badge.high {
+  background-color: var(--high-bg);
+  color: var(--high-potassium);
+}
+
+/* Cajas de Alerta Clínica */
+.clinical-alert {
+  padding: 12px 15px;
+  border-radius: 6px;
+  font-size: 11px;
+  margin-top: 10px;
+}
+
+.clinical-alert.important {
+  background-color: var(--primary-light);
+  border-left: 4px solid var(--primary);
+  color: #114c57;
+}
+
+.clinical-alert.warning {
+  background-color: var(--mod-bg);
+  border-left: 4px solid var(--mod-potassium);
+  color: #a04c00;
+}
+
+.clinical-alert.caution {
+  background-color: var(--high-bg);
+  border-left: 4px solid var(--high-potassium);
+  color: #b71c1c;
+}
+
+.clinical-alert h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* ================= DISEÑO DE PLANTILLA DE COMIDAS ================= */
+.meal-template-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.distribution-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.distribution-table th {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px 6px;
+  border: 1px solid var(--primary);
+}
+
+.distribution-table th:first-child {
+  text-align: left;
+}
+
+.distribution-table td {
+  padding: 8px 6px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.distribution-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.distribution-table input[type="text"] {
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--text-dark);
+}
+
+.distribution-table input[type="text"]:focus {
+  outline: 1px solid var(--primary);
+  background: white;
+}
+
+/* Tarjeta de Recomendaciones Finales */
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.rec-card {
+  background: #fafafa;
+  border: 1px solid var(--border-color);
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 11px;
+}
+
+.rec-card h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary);
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ================= AJUSTES DE IMPRESIÓN ================= */
+@media print {
+  body {
+    background-color: #ffffff;
+  }
+  
+  .pages-container {
+    padding: 0;
+    gap: 0;
+  }
+  
+  .page {
+    box-shadow: none;
+    page-break-after: always;
+    page-break-inside: avoid;
+    margin: 0;
+    height: 11.0in; /* Mantener tamaño fijo */
+    width: 8.5in;
+  }
+  
+  /* Esconder controles interactivos en impresión si los hay */
+  .no-print {
+    display: none;
+  }
+}
+
+/* ================= BUSCADOR ESTILO ADMINISTRADOR SMAE ================= */
+header.no-print {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 20px;
+  width: 100%;
+}
+.headerSMAE {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.logoSmae img {
+  max-height: 40px;
+  display: block;
+}
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+.linksMenu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.linksMenu a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.linksMenu a:hover, .linksMenu a.active {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+.linksMenu a.btn {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background-color: transparent;
+}
+.linksMenu a.btn:hover {
+  background-color: var(--primary);
+  color: white;
+}
+.linksMenu a.btn.platillo {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.linksMenu a.btn.platillo:hover {
+  background-color: var(--accent);
+  color: white;
+}
+.linksMenu a.btn.tutorial {
+  border-color: #78909c;
+  color: #78909c;
+}
+.linksMenu a.btn.tutorial:hover {
+  background-color: #78909c;
+  color: white;
+}
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.headerRight a.button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.headerRight a.session {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+.headerRight a.session:hover {
+  background-color: var(--primary);
+  color: white;
+}
+.headerRight a.logout {
+  color: var(--high-potassium);
+  background-color: var(--high-bg);
+}
+.headerRight a.logout:hover {
+  background-color: var(--high-potassium);
+  color: white;
+}
+
+/* Responsive Header menu trigger */
+.menu-trigger {
+  display: none;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: relative;
+}
+.menu-trigger::before, .menu-trigger::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 2.5px;
+  background-color: var(--text-dark);
+  left: 1px;
+  transition: all 0.3s;
+}
+.menu-trigger::before {
+  top: 6px;
+  box-shadow: 0 6px 0 var(--text-dark);
+}
+.menu-trigger::after {
+  bottom: 6px;
+}
+
+/* Pleca Premium Style */
+.pleca.premium {
+  background: linear-gradient(135deg, #1e6b7b 0%, #0d3840 100%);
+  height: 140px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+.pleca.premium::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 85%;
+  height: 200%;
+  background: rgba(255,255,255,0.04);
+  transform: rotate(25deg);
+}
+.pleca.premium::after {
+  content: 'Membresía Premium';
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  font-size: 26px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Layout de Búsqueda */
+.contentBusqueda {
+  width: 90%;
+  margin: 30px auto 0 auto;
+  max-width: 1000px;
+  text-align: left;
+}
+.contentBusqueda .nav {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0;
+  gap: 15px;
+}
+.contentBusqueda .nav span {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text-dark);
+  margin-right: 10px;
+  padding-bottom: 10px;
+}
+.contentBusqueda .nav-item {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-light);
+  text-decoration: none;
+  padding-bottom: 10px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.contentBusqueda .nav-item:hover {
+  color: var(--primary);
+}
+.contentBusqueda .nav-item.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .menu-trigger {
+    display: block;
+  }
+  .linksMenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px;
+    z-index: 1001;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    gap: 10px;
+  }
+  .linksMenu.active {
+    display: flex;
+  }
+  .headerRight {
+    display: none;
+  }
+  .pleca.premium::after {
+    font-size: 20px;
+    right: 20px;
+  }
+}
+
+.buscadorInput {
+  position: relative;
+  width: 100%;
+}
+.input-group {
+  display: flex;
+  width: 100%;
+}
+.input-group .form-control {
+  flex: 1;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-right: none !important;
+}
+.input-group-append {
+  display: flex;
+}
+.input-group-append .btnBuscar {
+  background-color: var(--primary);
+  color: white;
+  border: 1.5px solid var(--primary);
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  padding: 0 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.input-group-append .btnBuscar:hover {
+  background-color: #114c57;
+  border-color: #114c57;
+}
+
+#resultadosBusqueda {
+  border: 1px solid var(--border-color);
+  max-height: 220px;
+  overflow-y: auto;
+  display: none;
+  position: absolute;
+  background-color: white;
+  z-index: 1000;
+  width: 100%;
+  margin-top: 2px;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+#resultadosBusqueda ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#resultadosBusqueda li {
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-dark);
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #f1f5f9;
+  text-align: left;
+}
+#resultadosBusqueda li:last-child {
+  border-bottom: none;
+}
+#resultadosBusqueda li:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Resultados del Buscador */
+.results-grid, .list-ajaxifyed-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+  max-height: 550px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+.result-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+.result-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  border-color: var(--primary);
+}
+.result-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+.result-card h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 700;
+  margin: 0 10px 0 0;
+}
+.result-card .portion {
+  font-size: 12px;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+.result-card .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 8px;
+}
+.result-card .group-badge {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ================= MODAL ESTILO ADMINISTRADOR SMAE ================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 15px;
+}
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-dialog {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 850px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.modal-overlay.active .modal-dialog {
+  transform: translateY(0);
+}
+.modal-header {
+  background: linear-gradient(135deg, var(--primary) 0%, #114c57 100%);
+  color: white;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.headAlimento {
+  text-align: left;
+}
+.headAlimento h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: white;
+}
+.headAlimento span {
+  font-size: 10px;
+  font-weight: 700;
+  opacity: 0.9;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-transform: uppercase;
+  background-color: rgba(255,255,255,0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.modal-header .close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  line-height: 1;
+  padding: 0;
+}
+.modal-header .close-btn:hover {
+  opacity: 1;
+}
+.modal-body {
+  padding: 24px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.modalAlimento {
+  width: 100%;
+}
+.modal-row {
+  display: flex;
+  gap: 24px;
+}
+.modal-col-6 {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .modal-row {
+    flex-direction: column;
+  }
+}
+
+.datosAlimento {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+.datosGr p {
+  font-size: 13px;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+.datosGr p span#valor {
+  background: var(--primary);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* Macros Grid */
+.macros-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.cuadroInfo {
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1.5px solid var(--border-color);
+  transition: transform 0.2s;
+}
+.cuadroInfo:hover {
+  transform: translateY(-2px);
+}
+.cuadroInfo span {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: var(--text-light);
+}
+.cuadroInfo p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+.cuadroInfo font {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.background-energia {
+  background-color: #fff8e1;
+  border-color: #ffe082;
+}
+.background-energia p {
+  color: #ff8f00;
+}
+.background-proteina {
+  background-color: #e3f2fd;
+  border-color: #90caf9;
+}
+.background-proteina p {
+  color: #1565c0;
+}
+.background-lipidos {
+  background-color: #fbe9e7;
+  border-color: #ffab91;
+}
+.background-lipidos p {
+  color: #d84315;
+}
+.background-hidratos {
+  background-color: #e0f2f1;
+  border-color: #80cbc4;
+}
+.background-hidratos p {
+  color: #00695c;
+}
+
+/* Tablas modal */
+.tablaEquivalencia, .tablasAlimento {
+  text-align: left;
+}
+.tablaEquivalencia p.title, .tablasAlimento p.title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11.5px;
+  margin-bottom: 15px;
+}
+.modal-table th {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+  text-align: left;
+  padding: 6px 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.modal-table td {
+  padding: 7px 8px;
+  border-bottom: 1px solid #f0f0f0;
+  color: var(--text-dark);
+}
+.modal-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ================= ACOMPAÑAMIENTO DE BÚSQUEDA SUB-PANELES ================= */
+.search-sub-panel {
+  display: none;
+}
+.search-sub-panel.active {
+  display: block;
+}
+
+/* Tarjetas informativas de Grupos */
+.group-card {
+  background: white;
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.group-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 6px 15px rgba(30, 107, 123, 0.1);
+}
+.group-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid #f1f3f5;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+.group-card h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0;
+}
+.group-card-desc {
+  font-size: 10.5px;
+  color: var(--text-light);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+.group-card-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  font-size: 10px;
+  background-color: var(--primary-light);
+  padding: 8px;
+  border-radius: 6px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Platillos AI Chef Layouts */
+.ai-recipe-card {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  margin-top: 20px;
+  border-left: 6px solid var(--primary);
+  animation: recipeFadeIn 0.4s ease-out;
+  text-align: left;
+}
+@keyframes recipeFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.recipe-title {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  border-bottom: 1.5px solid #f1f3f5;
+  padding-bottom: 10px;
+}
+.recipe-section-title {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-dark);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 20px 0 10px 0;
+  letter-spacing: 0.5px;
+}
+.recipe-ingredients-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.recipe-ingredients-list li {
+  font-size: 11.5px;
+  padding: 6px 0;
+  border-bottom: 1px solid #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+}
+.recipe-ingredients-list li:last-child {
+  border-bottom: none;
+}
+.recipe-instructions {
+  margin: 10px 0;
+  padding-left: 18px;
+  font-size: 11.5px;
+  line-height: 1.6;
+}
+.recipe-instructions li {
+  margin-bottom: 6px;
+}
+.recipe-totals-box {
+  background: #fafafa;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+
